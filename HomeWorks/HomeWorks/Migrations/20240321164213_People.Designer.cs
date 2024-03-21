@@ -4,6 +4,7 @@ using HomeWorks.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeWorks.Migrations
 {
     [DbContext(typeof(MyAppDbContext))]
-    partial class MyAppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240321164213_People")]
+    partial class People
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +183,7 @@ namespace HomeWorks.Migrations
                         {
                             StudentId = 1,
                             Address = "Test1",
-                            BirtDate = new DateTime(2024, 3, 21, 21, 42, 32, 825, DateTimeKind.Local).AddTicks(9647),
+                            BirtDate = new DateTime(2024, 3, 21, 21, 42, 12, 776, DateTimeKind.Local).AddTicks(8220),
                             City = "Test1",
                             Cours = "Test1",
                             FirstName = "Test1",
@@ -190,7 +193,7 @@ namespace HomeWorks.Migrations
                         {
                             StudentId = 2,
                             Address = "Test2",
-                            BirtDate = new DateTime(2024, 3, 20, 21, 42, 32, 825, DateTimeKind.Local).AddTicks(9660),
+                            BirtDate = new DateTime(2024, 3, 20, 21, 42, 12, 776, DateTimeKind.Local).AddTicks(8234),
                             City = "Test2",
                             Cours = "Test2",
                             FirstName = "Test2",
@@ -200,7 +203,7 @@ namespace HomeWorks.Migrations
                         {
                             StudentId = 3,
                             Address = "Test3",
-                            BirtDate = new DateTime(2024, 2, 21, 21, 42, 32, 825, DateTimeKind.Local).AddTicks(9672),
+                            BirtDate = new DateTime(2024, 2, 21, 21, 42, 12, 776, DateTimeKind.Local).AddTicks(8249),
                             City = "Test3",
                             Cours = "Test3",
                             FirstName = "Test3",
@@ -210,7 +213,7 @@ namespace HomeWorks.Migrations
                         {
                             StudentId = 4,
                             Address = "Test4",
-                            BirtDate = new DateTime(2024, 1, 21, 21, 42, 32, 825, DateTimeKind.Local).AddTicks(9676),
+                            BirtDate = new DateTime(2024, 1, 21, 21, 42, 12, 776, DateTimeKind.Local).AddTicks(8257),
                             City = "Test4",
                             Cours = "Test4",
                             FirstName = "Test4",

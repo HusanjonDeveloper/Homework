@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HomeWorks.Migrations
 {
     [DbContext(typeof(MyAppDbContext))]
-    [Migration("20240320124658_Database")]
-    partial class Database
+    [Migration("20240321162221_Students")]
+    partial class Students
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,6 +59,48 @@ namespace HomeWorks.Migrations
                     b.HasKey("StudentId");
 
                     b.ToTable("Students");
+
+                    b.HasData(
+                        new
+                        {
+                            StudentId = 1,
+                            Address = "Test1",
+                            BirtDate = new DateTime(2024, 3, 21, 21, 22, 21, 464, DateTimeKind.Local).AddTicks(9864),
+                            City = "Test1",
+                            Cours = "Test1",
+                            FirstName = "Test1",
+                            LastName = "Test1"
+                        },
+                        new
+                        {
+                            StudentId = 2,
+                            Address = "Test2",
+                            BirtDate = new DateTime(2024, 3, 20, 21, 22, 21, 464, DateTimeKind.Local).AddTicks(9938),
+                            City = "Test2",
+                            Cours = "Test2",
+                            FirstName = "Test2",
+                            LastName = "Test2"
+                        },
+                        new
+                        {
+                            StudentId = 3,
+                            Address = "Test3",
+                            BirtDate = new DateTime(2024, 2, 21, 21, 22, 21, 464, DateTimeKind.Local).AddTicks(9955),
+                            City = "Test3",
+                            Cours = "Test3",
+                            FirstName = "Test3",
+                            LastName = "Test3"
+                        },
+                        new
+                        {
+                            StudentId = 4,
+                            Address = "Test4",
+                            BirtDate = new DateTime(2024, 1, 21, 21, 22, 21, 464, DateTimeKind.Local).AddTicks(9960),
+                            City = "Test4",
+                            Cours = "Test4",
+                            FirstName = "Test4",
+                            LastName = "Test4"
+                        });
                 });
 #pragma warning restore 612, 618
         }
