@@ -22,7 +22,7 @@ namespace HomeWorks.Confuragation
                       Address = "Test1",
                        City = "Test1",
                         BirtDate = DateTime.Now,
-                         Cours = "Test1"
+                       
                 },
                 new Student
                 {
@@ -32,7 +32,7 @@ namespace HomeWorks.Confuragation
                      Address = "Test2",
                      City = "Test2",
                      BirtDate = DateTime.Now.AddDays(-1),
-                     Cours = "Test2"
+                   
                 },
                 new Student
                 {
@@ -42,7 +42,7 @@ namespace HomeWorks.Confuragation
                     Address = "Test3",
                     City = "Test3",
                     BirtDate = DateTime.Now.AddMonths(-1),
-                    Cours  = "Test3"
+                  
                 },
                 new Student
                 {
@@ -52,7 +52,7 @@ namespace HomeWorks.Confuragation
                     Address = "Test4",
                     City = "Test4",
                     BirtDate= DateTime.Now.AddMonths(-2),
-                    Cours = "Test4"
+                  
                 });
         }
     }
