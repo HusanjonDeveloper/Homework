@@ -6,8 +6,8 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public DateTime BirtDate { get; set; }
-        public string Cours { get; set; }
         public  string City { get; set; }
         public string Address { get; set; }
+        public  List<Course> Courses { get; set; }
     }
 }

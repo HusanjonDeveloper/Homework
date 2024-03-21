@@ -15,7 +15,6 @@ var student = new Student
     Address = "Test",
     BirtDate = DateTime.Now.AddDays(-1),
     City = "Test",
-    Cours = "Test", 
 };
 
 for (int i = 0; i < 10; i ++)
@@ -28,11 +27,8 @@ for (int i = 0; i < 10; i ++)
         Address = $"Default2{i + 1}",
         BirtDate = DateTime.Now.AddDays(-(i+1)),
         City = $"Default2{i + 1}",
-        Cours = $"Default2{i + 1}",
     });
 };
 
-context.Students.Update(student);
-//context.SaveChanges();
-
-Console.WriteLine(student);
+var people = context.People.SelectMany(o => o.Vehicles);
+Console.WriteLine(people.ToQueryString());

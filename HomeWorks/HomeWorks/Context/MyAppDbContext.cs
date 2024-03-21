@@ -8,10 +8,13 @@ namespace HomeWorks.Context
     {
         public DbSet<Student> Students { get; set; }
         public  DbSet<Person> People { get; set; }
+        public  DbSet<Passport> Passports { get; set; }
+        public  DbSet<Vehicle> Vehicles { get; set; }
+        public  DbSet<Course> Courses { get; set; }
 
         public MyAppDbContext()
         {
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -27,10 +30,20 @@ namespace HomeWorks.Context
                  .WithOne(p => p.Person)
                  .HasForeignKey<Passport>(x => x.PersonId);
 
+            //one-to-many
+            modelBuilder.Entity<Person>()
+                .HasMany(p => p.Vehicles)
+                .WithOne(o => o.Owner)
+                .HasForeignKey(c => c.PersonId);
+            //many-to-many
+            modelBuilder.Entity<Student>()
+                .HasMany(p => p.Courses)
+                .WithMany(o => o.Students);
 
             modelBuilder.ApplyConfiguration(new StudentConfiragetion());
             modelBuilder.ApplyConfiguration(new PassportConfuragation());
             modelBuilder.ApplyConfiguration(new PersonConfiragetion());
+            modelBuilder.ApplyConfiguration(new VehicleConfuragation());
 
         }
     }
